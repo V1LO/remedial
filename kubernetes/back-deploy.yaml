@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: yourdockerhubname/yourdockerhubreponame:backend_1.0.1
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_HOST
+          value: "mysql"
+        - name: DB_NAME
+          value: "todo_db"
+        - name: DB_USER
+          value: "root"
+        - name: DB_PASS
+          value: "root"
+        - name: JWT_SECRET
+          value: "your_secret_key"
+        restartPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  ports:
+  - port: 5000
+    targetPort: 5000
+  selector:
+    app: backend

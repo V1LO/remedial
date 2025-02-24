@@ -1,0 +1,174 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container utama */
+.container {
+  width: 400px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Input field */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button utama (Tambah/Update Task) */
+.button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #218838;
+}
+
+/* Container untuk daftar tugas */
+.task-container {
+  margin-top: 20px;
+}
+
+/* Item tugas */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+/* Tugas yang telah selesai */
+.task-item.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  background: #e0e0e0;
+}
+
+/* Container untuk tombol dalam task */
+.button-container {
+  display: flex;
+  gap: 8px;
+}
+
+/* Tombol dalam daftar tugas */
+.strike-button-1,
+.edit-button-1,
+.delete-button-1 {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s;
+  color: #ffffff;
+}
+
+/* Warna tombol */
+.strike-button-1 {
+  background: #ffc107;
+}
+
+.edit-button-1 {
+  background: #007bff;
+}
+
+.delete-button-1 {
+  background: #dc3545;
+}
+
+/* Hover effect */
+.strike-button:hover {
+  background: #e0a800;
+}
+
+.edit-button:hover {
+  background: #0056b3;
+}
+
+.delete-button:hover {
+  background: #c82333;
+}
+
+/* Tombol logout */
+.logout-button {
+  width: 100%;
+  padding: 10px;
+  background: #dc3545;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.logout-button:hover {
+  background: #b52b3a;
+}
+
+/* Style for Regis */
+.register-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.register-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Style for Login */
+.login-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}

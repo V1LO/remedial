@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: yourdockerhubname/yourdockerhubreponame:frontend_1.0.1
+        ports:
+        - containerPort: 80
+        restartPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30000  # Sesuaikan jika ingin port lain
+  selector:
+    app: frontend

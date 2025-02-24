@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: yourdockerhubname/yourdockerhubreponame:frontend_1.0.1
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: always
+
+  backend:
+    image: yourdockerhubname/yourdockerhubreponame:backend_1.0.1
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db
+      DB_NAME: todo_db
+      DB_USER: root
+      DB_PASS: root
+      JWT_SECRET: your_secret_key
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: mysql:8
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
