@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: yourdockerhubname/yourdockerhubreponame:backend_1.0.1
+        image: kohryu/remedial:backend_1.0.1
         ports:
         - containerPort: 5000
         env:

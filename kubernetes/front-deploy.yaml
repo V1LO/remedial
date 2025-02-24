@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: yourdockerhubname/yourdockerhubreponame:frontend_1.0.1
+        image: kohryu/remedial:frontend_1.0.1
         ports:
         - containerPort: 80
         restartPolicy: Always
