@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   frontend:
-    image: yourdockerhubname/yourdockerhubreponame:frontend_1.0.1
+    image: kohryu/remedial:frontend_1.0.1
     container_name: frontend
     build:
       context: ./frontend
@@ -14,7 +14,7 @@ services:
     restart: always
 
   backend:
-    image: yourdockerhubname/yourdockerhubreponame:backend_1.0.1
+    image: kohryu/remedial:backend_1.0.1
     container_name: backend
     build:
       context: ./backend
